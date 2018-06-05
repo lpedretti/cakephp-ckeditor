@@ -1,5 +1,5 @@
 {
-    "name": "funayaki/AkkaCKEditor",
+    "name": "funayaki/ckeditor",
     "description": "AkkaCKEditor plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {
