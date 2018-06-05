@@ -6,10 +6,19 @@ use Cake\View\Helper;
 use Cake\View\View;
 
 /**
- * CKEditor helper
+ * CKEditor Helper
+ *
+ * @property \Cake\View\Helper $Html
  */
 class CKEditorHelper extends Helper
 {
+
+    /**
+     * @var array
+     */
+    public $helpers = [
+        'Html',
+    ];
 
     /**
      * Default configuration.
@@ -52,7 +61,7 @@ class CKEditorHelper extends Helper
     public function __construct(View $view, $config = [])
     {
         parent::__construct($view, $config);
-        $this->_configs = $this->config();
+        $this->_configs = $this->getConfig();
     }
 
     /**
@@ -87,11 +96,10 @@ class CKEditorHelper extends Helper
 
     public function replace($field = 'editor1')
     {
-        return <<<EOT
-            <script>
+        $script = <<<EOT
                 CKEDITOR.replace( '{$field}' );
-            </script>
 EOT;
+        return $this->Html->scriptBlock($script);
     }
 
     private function __setLocalPlugins()
