@@ -25,21 +25,21 @@ class CKEditorHelper extends Helper
     /**
      * Merged configuration
      *
-     * @var type array
+     * @var array
      */
     protected $_configs = [];
 
     /**
      * Local plugins
      *
-     * @var type String
+     * @var String
      */
     protected $_plugins = null;
 
     /**
      * Form textarea field CKEditor will be displayed on
      *
-     * @var type String
+     * @var String
      */
     protected $_field = null;
 
@@ -47,7 +47,7 @@ class CKEditorHelper extends Helper
      * Construct
      *
      * @param View $view
-     * @param type $config
+     * @param array $config
      */
     public function __construct(View $view, $config = [])
     {
@@ -65,8 +65,7 @@ class CKEditorHelper extends Helper
      *      ],
      * ]
      *
-     * @param String $field
-     * @param Array $local_plugins
+     * @return string
      */
     public function loadJs(/*$field = 'editor1', $local_plugins = []*/)
     {
