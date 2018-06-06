@@ -94,12 +94,9 @@ class CKEditorHelper extends Helper
         return '<script src="' . $cdn_file . '"></script>';
     }
 
-    public function replace($field = 'editor1')
+    public function replace($field, array $options = [])
     {
-        $script = <<<EOT
-                CKEDITOR.replace( '{$field}' );
-EOT;
-        return $this->Html->scriptBlock($script);
+        return $this->Html->scriptBlock("CKEDITOR.replace( '{$field}', " . json_encode($options) . " );");
     }
 
     private function __setLocalPlugins()
