@@ -21,7 +21,7 @@ A CakePHP 3.x Plugin to allow the integration of CKEditor into an application.
 
 ```php
 "require": {
-	"akkaweb/cakephp-ckeditor": "dev-master"
+	"funayaki/ckeditor": "dev-master"
 }
 ```
 
