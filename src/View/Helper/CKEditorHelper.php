@@ -78,7 +78,6 @@ class CKEditorHelper extends Helper
      */
     public function loadJs(/*$field = 'editor1', $local_plugins = []*/)
     {
-        $cdn_file = "//cdn.ckeditor.com/{$this->_configs['version']}/{$this->_configs['distribution']}/ckeditor.js";
         /*$this->_field = $field;
 
         if (!empty($local_plugins)) {
@@ -91,7 +90,7 @@ class CKEditorHelper extends Helper
 //                {$this->_plugins}
 //            </script>
 //EOT;
-        return '<script src="' . $cdn_file . '"></script>';
+        return '<script src="' . $this->jsUrl() . '"></script>';
     }
 
     public function replace($field, array $options = [])
@@ -111,6 +110,14 @@ class CKEditorHelper extends Helper
         $this->_plugins .= "CKEDITOR.replace( '{$this->_field}', { \n";
         $this->_plugins .= "extraPlugins: '{$plugins}' \n";
         $this->_plugins .= "} ); \n";
+    }
+
+    /**
+     * @return string
+     */
+    public function jsUrl()
+    {
+        return "//cdn.ckeditor.com/{$this->_configs['version']}/{$this->_configs['distribution']}/ckeditor.js";
     }
 
 }
