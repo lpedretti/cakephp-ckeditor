@@ -93,9 +93,14 @@ class CKEditorHelper extends Helper
         return '<script src="' . $this->jsUrl() . '"></script>';
     }
 
+    /**
+     * @param $field
+     * @param array $options
+     * @return mixed
+     */
     public function replace($field, array $options = [])
     {
-        return $this->Html->scriptBlock("CKEDITOR.replace( '{$field}', " . json_encode($options) . " );");
+        return $this->Html->scriptBlock($this->script($field, $options));
     }
 
     private function __setLocalPlugins()
@@ -120,4 +125,13 @@ class CKEditorHelper extends Helper
         return "//cdn.ckeditor.com/{$this->_configs['version']}/{$this->_configs['distribution']}/ckeditor.js";
     }
 
+    /**
+     * @param $field
+     * @param array $options
+     * @return string
+     */
+    public function script($field, array $options = [])
+    {
+        return "CKEDITOR.replace( '{$field}', " . json_encode($options) . " );";
+    }
 }
