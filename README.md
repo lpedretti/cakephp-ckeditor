@@ -27,9 +27,10 @@ A CakePHP 3.x Plugin to allow the integration of CKEditor into an application.
 
 * Run the following at the root of your application
 
-```
+```shell
 sudo php composer.phar update
 ```
+
 Note: if `composer.phar` is not found, you need to install it. Follow CakePHP's documentation here -> http://book.cakephp.org/3.0/en/installation.html. Refer to Installing Cakephp section
 
 ##### Git Clone
@@ -59,6 +60,7 @@ class AppController extends Controller{
 ```
 
 * Optionally you are able to choose the Version and Distribution of the CKEditor to be loaded. See more details at http://cdn.ckeditor.com/
+
 ```php
 class AppController extends Controller {
 	public $helpers = ['AkkaCKEditor.CKEditor' => [
@@ -78,14 +80,13 @@ class AppController extends Controller {
 ##### CKEditor.replace
 
 Insert the following code immediately after the textarea you want CKEditor applied
-````
+
+```php
 // replace(field-name)  -> replace takes field_name and can be used multiple times throughout your application
 	
 <?php echo $this->Form->input('body'); ?> // Example
 <?php echo $this->CKEditor->replace('body'); ?>
-````
-
-
+```
 
 ## Disclaimer
 Although we have done many tests to ensure this plugin works as intended, we advise you to use it at your own risk. As with anything else, you should first test any addition to your application in a test environment. Please provide any fixes or enhancements via issue or pull request.
