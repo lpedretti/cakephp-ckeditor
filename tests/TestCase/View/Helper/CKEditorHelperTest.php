@@ -44,4 +44,15 @@ class CKEditorHelperTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test setDefaultEditorConfig
+     *
+     */
+    public function testSetDefaultEditorConfig()
+    {
+        $this->CKEditor->setDefaultEditorConfig(['foo' => 1]);
+
+        $this->assertRegExp('/"foo":1/', $this->CKEditor->script('description'));
+    }
 }

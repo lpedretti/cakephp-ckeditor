@@ -2,6 +2,7 @@
 
 namespace AkkaCKEditor\View\Helper;
 
+use Cake\Utility\Hash;
 use Cake\View\Helper;
 use Cake\View\View;
 
@@ -28,7 +29,8 @@ class CKEditorHelper extends Helper
      */
     protected $_defaultConfig = [
         'version' => '4.4.7',
-        'distribution' => 'full'
+        'distribution' => 'full',
+        'editor_config' => [],
     ];
 
     /**
@@ -132,6 +134,22 @@ class CKEditorHelper extends Helper
      */
     public function script($field, array $options = [])
     {
-        return "CKEDITOR.replace( '{$field}', " . json_encode($options) . " );";
+        return "CKEDITOR.replace( '{$field}', " . json_encode(Hash::merge($options, $this->getDefaultEditorConfig())) . " );";
+    }
+
+    /**
+     * @param array $options
+     */
+    public function setDefaultEditorConfig(array $options)
+    {
+        $this->setConfig('editor_config', $options);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultEditorConfig()
+    {
+        return $this->getConfig('editor_config');
     }
 }
