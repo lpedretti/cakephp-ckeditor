@@ -64,8 +64,7 @@ class AppController extends Controller{
 ```php
 class AppController extends Controller {
 	public $helpers = ['AkkaCKEditor.CKEditor' => [
-		'version' => '4.4.7', // Default Option
-		'distribution' => 'full', // Default Option / Other options => 'basic', 'standard', 'standard-all', 'full-all'
+		'distribution' => 'full', // Default Option / Other options => 'basic', 'standard'
 		'editor_config' => [] // Default Option / Other options https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html
 	]];
 }
