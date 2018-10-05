@@ -28,7 +28,6 @@ class CKEditorHelper extends Helper
      *
      */
     protected $_defaultConfig = [
-        'version' => '4.4.7',
         'distribution' => 'full',
         'editor_config' => [],
     ];
@@ -124,7 +123,7 @@ class CKEditorHelper extends Helper
      */
     public function jsUrl()
     {
-        return "//cdn.ckeditor.com/{$this->_configs['version']}/{$this->_configs['distribution']}/ckeditor.js";
+        return "/akka_c_k_editor/{$this->_configs['distribution']}/ckeditor.js";
     }
 
     /**
