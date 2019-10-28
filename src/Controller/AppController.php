@@ -1,6 +1,6 @@
 <?php
 
-namespace AkkaCKEditor\Controller;
+namespace CKEditor\Controller;
 
 use App\Controller\AppController as BaseController;
 

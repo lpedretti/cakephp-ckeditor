@@ -1,6 +1,6 @@
 <?php
 use Cake\Routing\Router;
 
-Router::plugin('AkkaCKEditor', function ($routes) {
+Router::plugin('CKEditor', function ($routes) {
     $routes->fallbacks();
 });

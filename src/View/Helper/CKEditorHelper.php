@@ -1,10 +1,11 @@
 <?php
 
-namespace AkkaCKEditor\View\Helper;
+namespace CKEditor\View\Helper;
 
 use Cake\Utility\Hash;
 use Cake\View\Helper;
 use Cake\View\View;
+use Cake\Routing\Router;
 
 /**
  * CKEditor Helper
@@ -123,7 +124,7 @@ class CKEditorHelper extends Helper
      */
     public function jsUrl()
     {
-        return "/akka_c_k_editor/{$this->_configs['distribution']}/ckeditor.js";
+        return Router::fullBaseUrl() . "/c_k_editor/{$this->_configs['distribution']}/ckeditor.js";
     }
 
     /**
