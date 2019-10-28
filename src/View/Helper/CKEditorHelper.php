@@ -124,7 +124,7 @@ class CKEditorHelper extends Helper
      */
     public function jsUrl()
     {
-        return Router::fullBaseUrl() . "/c_k_editor/{$this->_configs['distribution']}/ckeditor.js";
+	return Router::url('/', true) . "/c_k_editor/{$this->_configs['distribution']}/ckeditor.js";
     }
 
     /**
