@@ -1,21 +1,21 @@
 {
-    "name": "funayaki/ckeditor",
-    "description": "AkkaCKEditor plugin for CakePHP",
+    "name": "lpedretti/ckeditor",
+    "description": "CKEditor plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {
-        "cakephp/cakephp": "^3.4"
+        "cakephp/cakephp": "^3.7"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7|^6.0"
     },
     "autoload": {
         "psr-4": {
-            "AkkaCKEditor\\": "src"
+            "CKEditor\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AkkaCKEditor\\Test\\": "tests",
+            "CKEditor\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     }
